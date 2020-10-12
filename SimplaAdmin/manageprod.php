@@ -77,11 +77,11 @@
                         <thead>
                             <tr>
                                 <th><input class="check-all" type="checkbox" /></th>
-                                <th>Column 1</th>
-                                <th>Column 2</th>
-                                <th>Column 3</th>
-                                <th>Column 4</th>
-                                <th>Column 5</th>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>PRICE</th>
+                                <th>IMAGE</th>
+                                <th>QUNATITY</th>
                             </tr>
                             
                         </thead>

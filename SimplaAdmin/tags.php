@@ -230,9 +230,14 @@
                                 <td>
                                     <!-- Icons -->
                                         <a href="#" title="Edit">
-                                        <img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                        <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-                                        <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+                                        <img src="resources/images/icons/pencil.png" 
+                                        alt="Edit" /></a>
+                                        <a href="#" title="Delete">
+                                        <img src="resources/images/icons/cross.png" 
+                                        alt="Delete" /></a> 
+                                        <a href="#" title="Edit Meta">
+                            <img src="resources/images/icons/hammer_screwdriver.png" 
+                                        alt="Edit Meta" /></a>
                                 </td>
                             </tr>
                             
@@ -244,9 +249,15 @@
                                 <td>Donec tortor diam</td>
                                 <td>
                                     <!-- Icons -->
-                                        <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                        <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-                                        <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+                                        <a href="#" title="Edit">
+                                        <img src="resources/images/icons/pencil.png" 
+                                        alt="Edit" /></a>
+                                        <a href="#" title="Delete">
+                                        <img src="resources/images/icons/cross.png" 
+                                        alt="Delete" /></a> 
+                                        <a href="#" title="Edit Meta">
+                            <img src="resources/images/icons/hammer_screwdriver.png" 
+                                        alt="Edit Meta" /></a>
                                 </td>
                             </tr>
                             
@@ -258,9 +269,15 @@
                                 <td>Donec tortor diam</td>
                                 <td>
                                     <!-- Icons -->
-                                        <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                        <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-                                        <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+                                        <a href="#" title="Edit">
+                                        <img src="resources/images/icons/pencil.png" 
+                                        alt="Edit" /></a>
+                                        <a href="#" title="Delete">
+                                        <img src="resources/images/icons/cross.png" 
+                                        alt="Delete" /></a> 
+                                        <a href="#" title="Edit Meta">
+                            <img src="resources/images/icons/hammer_screwdriver.png" 
+                                        alt="Edit Meta" /></a>
                                 </td>
                             </tr>
                         </tbody>
