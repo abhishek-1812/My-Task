@@ -15,7 +15,7 @@
 $servername = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "store";
+$dbname = "tempe";
 
 // Create connection
 $conn = new mysqli($servername, $dbuser, $dbpass, $dbname);
@@ -23,5 +23,4 @@ $conn = new mysqli($servername, $dbuser, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-//   echo "Connected successfully";
 ?>

@@ -17,7 +17,7 @@
 <?php 
 $filename = basename($_SERVER['REQUEST_URI']);
 // echo $filename;
-$product = array('category.php','tags.php','Products.php');
+$product = array('category.php','tags.php','manageproduct.php');
 $user = array('users.php');
 ?>
 
@@ -50,8 +50,8 @@ Dashboard
 Products
 </a>
 <ul>
-<li><a <?php if($filename == "Products.php" ) :?>class="current"
-<?php endif;?>href="Products.php">Add Products</a></li>
+<li><a <?php if($filename == "manageproduct.php" ) :?>class="current"
+<?php endif;?>href="manageproduct.php">Manage Products</a></li>
 <li><a <?php if($filename == "category.php") :?>class="current"
 <?php endif;?>href="category.php">Manage Categories</a></li>
 <li><a <?php if($filename == "tags.php") :?>class="current"
