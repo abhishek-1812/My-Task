@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
         $new .= $values . ",";
     }
 
-    $qur = "INSERT INTO products(`catid`,`name`,`price`,`image`,`descrp`,`tag`) VALUES 
+    $qur = "INSERT INTO products(`catid`,`name`,`price`,`image`,`descrp`,`tagid`) VALUES 
     ('$catname','$pname','$price','$filename','$desc','$new')";
 
     $run = mysqli_query($conn, $qur);
@@ -139,7 +139,7 @@ if (isset($_POST['submit'])) {
                  <td><?php echo '<img src="image/' . $row['image'] . '">' ?></td>
                                     <td><?php echo $row['descrp'] ?></td>
                                     <td><?php echo $row['catid'] ?></td>
-                                    <td><?php echo $row['tag'] ?></td>
+                                    <td><?php echo $row['tagid'] ?></td>
                                     <td><a href="editprod.php?id=<?php echo $row['pid'] ?>"
                                      title="Edit">
                                         <img src="resources/images/icons/pencil.png" 
@@ -214,7 +214,7 @@ if (isset($_POST['submit'])) {
                                 while ($row = $result->fetch_assoc()) {
                                     ?>
                                 <input type="checkbox" 
-                                value="<?php echo $row['tagname']?>" name="check[]" /> 
+                                value="<?php echo $row['tagid']?>" name="check[]" /> 
                                 <?php echo $row['tagname']?>
                                 <?php
                                 }

@@ -15,9 +15,9 @@ require 'config.php';
 $error = array();
 if (isset($_POST['submit'])) {
     // echo '<script>alert("ok")</script>';
-    $category = $_POST['category'];
+    $tag = $_POST['tagname'];
 
-    $qur="INSERT INTO category(`catname`)VALUE('$category')";
+    $qur="INSERT INTO tag(`tagname`)VALUES('$tag')";
     $run = mysqli_query($conn, $qur);
 
     if ($run) {
@@ -74,19 +74,6 @@ if (isset($_POST['submit'])) {
             <div class="content-box-content">
                 
                 <div class="tab-content default-tab" id="tab1"> 
-                <!-- This is the target div. id must
-                 match the href of this div's tab -->
-                    
-                    <div class="notification attention png_bg">
-                        <a href="#" class="close">
-                            <img src="resources/images/icons/cross_grey_small.png"
-                         title="Close this notification" alt="close" /></a>
-                        <div>
-                            This is a Content Box. You can put whatever you want
-                            in it.By the way, you can close this notification with 
-                            the top-right cross.
-                        </div>
-                    </div>
                     
                     <table>
                         
@@ -94,6 +81,7 @@ if (isset($_POST['submit'])) {
                             <tr>
                                 <th>Category ID</th>
                                 <th>Category Name</th>
+                                <th>Action</th>
                             </tr>
                             
                         </thead>
@@ -133,30 +121,33 @@ if (isset($_POST['submit'])) {
                         </tfoot>
                         
                         <tbody>
-                           
-                            <tr>
+                        <tr>
                             <?php
                             require 'config.php';
-                            $query = "SELECT * FROM category";
+                            $query = "SELECT * FROM tag";
 
                             $run = mysqli_query($conn, $query);
                             while ($row = mysqli_fetch_assoc($run)) {
                             ?>
-                                <td><?php echo $row['catid'] ?></td>
-                                <td><?php echo $row['catname'] ?></td>
+                                <td><?php echo $row['tagid'] ?></td>
+                                <td><?php echo $row['tagname'] ?></td>
                                 <td>
                                 <a href="editpro.php?id=
-            <?php echo $row['catid'] ?>" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                <a href="del.php?id=<?php $row['catid'] ?>"
+                                <?php echo $row['tagid'] ?>" 
+                                    title="Edit">
+                                    <img src="resources/images/icons/pencil.png" 
+                                    alt="Edit" /></a>
+                                <a href="del.php?id=<?php $row['tagid'] ?>"
                                 title='Delete'>
                                 <img src='resources/images/icons/cross.png'
                                 alt='Delete' /></a>
                                 </td>
-                                </tr> 
+                                </tr>
                                 <?php
                             }
 ?>
-         
+
+              
                         </tbody>
                         
                     </table> 
@@ -171,12 +162,12 @@ if (isset($_POST['submit'])) {
                         or "column-right" on fieldsets to divide the
                          form into columns -->
                          <p>
-                                <label for="category">Category: <br>
-                                <input type="text" name="category" required></label>
+                                <label for="tag">TAG: <br>
+                                <input type="text" name="tagname" required></label>
                             </p>
                             
                             <p>
-                                <input class="button" name ="submit"type="submit" 
+                                <input class="button" name ="submit" type="submit" 
                                 value="Submit" />
                             </p>
                             
