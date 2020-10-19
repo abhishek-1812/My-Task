@@ -119,7 +119,7 @@ require 'config.php';
                 <ul class="aa-head-top-nav-right">
                   <li><a href="account.html">My Account</a></li>
                   <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
-                  <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
+                  <li class="hidden-xs"><a href="cart.php">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
                   <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 </ul>
@@ -394,7 +394,10 @@ require 'config.php';
                 $cid = $_REQUEST['tid'];
                 $sql = "SELECT * FROM products WHERE `tagid`= $cid ";
               }
-              else {
+              else if (isset($_REQUEST['colid'])!=0) {
+                $cid = $_REQUEST['colid'];
+                $sql = "SELECT * FROM products WHERE `colid`= $cid ";
+              }else {
                 $sql = "SELECT * FROM products";
               }
                 $run = $conn->query($sql);
@@ -578,18 +581,16 @@ require 'config.php';
             <div class="aa-sidebar-widget">
               <h3>Shop By Color</h3>
               <div class="aa-color-tag">
-                <a class="aa-color-green" href="#"></a>
-                <a class="aa-color-yellow" href="#"></a>
-                <a class="aa-color-pink" href="#"></a>
-                <a class="aa-color-purple" href="#"></a>
-                <a class="aa-color-blue" href="#"></a>
-                <a class="aa-color-orange" href="#"></a>
-                <a class="aa-color-gray" href="#"></a>
-                <a class="aa-color-black" href="#"></a>
-                <a class="aa-color-white" href="#"></a>
-                <a class="aa-color-cyan" href="#"></a>
-                <a class="aa-color-olive" href="#"></a>
-                <a class="aa-color-orchid" href="#"></a>
+              <?php 
+                    require 'config.php';
+                    $sql  = "SELECT * FROM color";
+                    $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                        ?>
+                        <a href="product.php?colid=<?php echo $row['cid']?>">
+                    <input type = "color" value="<?php echo $row['cname']?>" style="border:none;" disabled/></a>
+                    <?php
+                    }?>
               </div>                            
             </div>
             <!-- single sidebar -->

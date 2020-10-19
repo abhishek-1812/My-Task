@@ -19,6 +19,8 @@ if (isset($_POST['submit'])) {
     $price = $_POST['price'];
     $desc = $_POST['desc'];
     $catname = $_POST['dropdown'];
+    $cid = $_POST['color'];
+    
 
     $filename = $_FILES["img"]["name"];
         $tempname = $_FILES["img"]["tmp_name"];
@@ -43,8 +45,8 @@ if (isset($_POST['submit'])) {
         $new .= $values . ",";
     }
 
-    $qur = "INSERT INTO products(`catid`,`name`,`price`,`image`,`descrp`,`tagid`) VALUES 
-    ('$catname','$pname','$price','$filename','$desc','$new')";
+    $qur = "INSERT INTO products(`catid`,`name`,`price`,`image`,`descrp`,`tagid`,`cid`) VALUES 
+    ('$catname','$pname','$price','$filename','$desc','$new',$cid)";
 
     $run = mysqli_query($conn, $qur);
 
@@ -122,7 +124,8 @@ if (isset($_POST['submit'])) {
                             <th>IMAGE</th>
                             <th>DESCRIPTION</th>
                             <th>CATEGORY</th>
-                            <th>TAGS</th>                            
+                            <th>TAGS</th>   
+                            <th>Color ID</th>                           
                             <th>ACTION</th>
                         </tr>                           
                         <?php
@@ -140,6 +143,7 @@ if (isset($_POST['submit'])) {
                                     <td><?php echo $row['descrp'] ?></td>
                                     <td><?php echo $row['catid'] ?></td>
                                     <td><?php echo $row['tagid'] ?></td>
+                                    <td><?php echo $row['cid'] ?></td>
                                     <td><a href="editprod.php?id=<?php echo $row['pid'] ?>"
                                      title="Edit">
                                         <img src="resources/images/icons/pencil.png" 
@@ -216,6 +220,21 @@ if (isset($_POST['submit'])) {
                                 <input type="checkbox" 
                                 value="<?php echo $row['tagid']?>" name="check[]" /> 
                                 <?php echo $row['tagname']?>
+                                <?php
+                                }
+                                ?>                                   
+                            </p>
+                            <p>
+                                <label>Color</label>
+                                <?php 
+                                require 'config.php';
+                                $sql  = "SELECT * FROM color";
+                                $result = $conn->query($sql);
+                                while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                <input type="checkbox" 
+                                value="<?php echo $row['cid']?>" name="color" /> 
+                                <input type = "color" value="<?php echo $row['cname']?>" style="border:none;" disabled />
                                 <?php
                                 }
                                 ?>                                   

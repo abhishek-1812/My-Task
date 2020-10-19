@@ -17,7 +17,7 @@
 <?php 
 $filename = basename($_SERVER['REQUEST_URI']);
 // echo $filename;
-$product = array('category.php','tags.php','manageproduct.php');
+$product = array('category.php','tags.php','manageproduct.php','color.php');
 $user = array('users.php');
 ?>
 
@@ -56,6 +56,8 @@ Products
 <?php endif;?>href="category.php">Manage Categories</a></li>
 <li><a <?php if($filename == "tags.php") :?>class="current"
 <?php endif;?>href="tags.php">Manage Tags </a></li>
+<li><a <?php if($filename == "color.php") :?>class="current"
+<?php endif;?>href="color.php">Manage color </a></li>
 </ul>
 </li>
 
