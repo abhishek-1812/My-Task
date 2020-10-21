@@ -510,8 +510,23 @@ require 'config.php';
               <!-- / quick view modal -->   
             </div>
             <div class="aa-product-catg-pagination">
+            <?php
+            $sql  = "SELECT * FROM products";
+            $result1 = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result1)>0) {
+                $total = mysqli_num_rows($result1);
+                $limit = 2;
+                $totalpage = ceil($total / $limit);
+                echo '<ul class="pagination">';
+                for ($i = 1;$i <= $totalpage; $i++) {
+                  echo '<li><a href="product.php?pg='.$i.'">'.$i.'</a></li>';
+                }
+                echo '</ul>';
+            }
+            
+            ?>
               <nav>
-                <ul class="pagination">
+                <!-- <ul class="pagination">
                   <li>
                     <a href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
@@ -527,7 +542,7 @@ require 'config.php';
                       <span aria-hidden="true">&raquo;</span>
                     </a>
                   </li>
-                </ul>
+                </ul> -->
               </nav>
             </div>
           </div>

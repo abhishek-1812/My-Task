@@ -234,7 +234,8 @@ if (isset($_POST['submit'])) {
                                     ?>
                                 <input type="checkbox" 
                                 value="<?php echo $row['cid']?>" name="color" /> 
-                                <input type = "color" value="<?php echo $row['cname']?>" style="border:none;" disabled />
+                                <input type = "color" value="<?php echo $row['cname']?>" 
+                                style="border:none;" disabled />
                                 <?php
                                 }
                                 ?>                                   
