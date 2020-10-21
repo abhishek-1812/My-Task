@@ -386,6 +386,14 @@ require 'config.php';
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
               <?php
+              $limit = 2;
+             
+              if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+              } else {
+                $page = 1;
+              }
+              $off = ($page - 1)* $limit;
               if (isset($_REQUEST['catid'])!=0) {
                 $cid = $_REQUEST['catid'];
                 $sql = "SELECT * FROM products WHERE `catid`= $cid ";
@@ -515,7 +523,7 @@ require 'config.php';
             $result1 = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result1)>0) {
                 $total = mysqli_num_rows($result1);
-                $limit = 2;
+                // $limit = 2;
                 $totalpage = ceil($total / $limit);
                 echo '<ul class="pagination">';
                 for ($i = 1;$i <= $totalpage; $i++) {
